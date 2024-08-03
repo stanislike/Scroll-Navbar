@@ -1,7 +1,13 @@
-// Créer un événément au scroll
+let scrollYp = 0;
 
-// Cacher la navbar si l'utilisateur comment à descendre et la sortir quand il remonte
-
-// Stocker la valeur du précédent niveau de scroll pour savoir si l'on est monté ou descendu
-
-// Connaitre niveau de scroll (window.scrollY)
+const scrolling = window.addEventListener("scroll", () => {
+  //console.log("scroll");
+  if (scrollYp < window.scrollY) {
+    console.log("ranger navbar");
+    navbar.style.top = "-60px";
+  } else {
+    navbar.style.top = "0px";
+    console.log("afficher navbar");
+  }
+  scrollYp = window.scrollY;
+});
