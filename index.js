@@ -1,13 +1,10 @@
-let scrollYp = 0;
+let lastScroll = 0;
 
-const scrolling = window.addEventListener("scroll", () => {
-  //console.log("scroll");
-  if (scrollYp < window.scrollY) {
-    console.log("ranger navbar");
+window.addEventListener("scroll", () => {
+  if (lastScroll < window.scrollY) {
     navbar.style.top = "-60px";
   } else {
     navbar.style.top = "0px";
-    console.log("afficher navbar");
   }
-  scrollYp = window.scrollY;
+  lastScroll = window.scrollY;
 });
